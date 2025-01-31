@@ -1,16 +1,18 @@
+package student;
+
 import com.nhnacademy.jdbc.student.domain.Student;
-import com.nhnacademy.jdbc.student.repository.impl.StudentRepositoryImpl;
+import com.nhnacademy.jdbc.student.repository.impl.StatementStudentRepository;
 import org.junit.jupiter.api.*;
 
 import java.util.Random;
 
 class StudentRepositoryTest {
 
-    public static StudentRepositoryImpl studentRepository;
+    public static StatementStudentRepository studentRepository;
 
     @BeforeAll
     static void setUp(){
-        studentRepository = new StudentRepositoryImpl();
+        studentRepository = new StatementStudentRepository();
     }
 
     @Test
