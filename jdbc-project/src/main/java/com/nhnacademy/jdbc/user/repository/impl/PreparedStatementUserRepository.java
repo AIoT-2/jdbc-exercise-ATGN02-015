@@ -25,8 +25,12 @@ public class PreparedStatementUserRepository implements UserRepository {
             statement.setString(1,userId);
             statement.setString(2,userPassword);
             rs = statement.executeQuery();
+            // 바인딩 할 sql 문을 미리 작성하고 set으로 입력해주는 게 좋음
+            // sql 문이 실행된 ResultSet 저장
+            // select문 조회는 결과를 저장할 ResultSet이 필수로 따라옴
 
             if(rs.next()){
+            // rs.next()가 false면 조회된 데이터가 없음을 의미
                 return Optional.of(
                         new User(rs.getString("user_id"),rs.getString("user_name"),rs.getString("user_password"))
                 );
