@@ -63,10 +63,10 @@ public class BasicConnectionPool  {
 //        return connections.poll();
 
         synchronized (this) {
-        // this는 이 메서드가 속한 객체 인스턴스를 의미
-        // getConnection() 메서드가 정의된 객체를 락으로 사용
+            // this는 이 메서드가 속한 객체 인스턴스를 의미
+            // getConnection() 메서드가 정의된 객체를 락으로 사용
             while (connections.isEmpty()) {
-            // connection 리스트가 비어있으면 대기
+                // connection 리스트가 비어있으면 대기
                 wait();
             }
             return connections.poll();
@@ -100,9 +100,9 @@ public class BasicConnectionPool  {
     }
 
     public void distory() throws SQLException {
-    // 실행 종료 시 모든 Connection을 닫아주는 것이 좋음
-    // 리소스 누수 방지, 애플리케이션 종료 시 정리, DB 서버 연결 제한 문제 등을 위함
-    // connection pool을 돌면서 모든 connection 객체를 닫음
+        // 실행 종료 시 모든 Connection을 닫아주는 것이 좋음
+        // 리소스 누수 방지, 애플리케이션 종료 시 정리, DB 서버 연결 제한 문제 등을 위함
+        // connection pool을 돌면서 모든 connection 객체를 닫음
         //todo#6 Connection Pool에 등록된 Connection을 close 합니다.
         for (Connection connection : connections) {
             if (!connection.isClosed()) {
