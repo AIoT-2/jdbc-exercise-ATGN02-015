@@ -2,9 +2,11 @@ package com.nhnacademy.jdbc.student.repository;
 
 import com.nhnacademy.jdbc.student.domain.Student;
 
+import java.sql.Connection;
 import java.util.Optional;
 
 public interface StudentRepository {
+
     int save(Student student);
 
     Optional<Student> findById(String id);
