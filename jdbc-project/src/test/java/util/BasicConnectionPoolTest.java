@@ -58,7 +58,7 @@ class BasicConnectionPoolTest {
         connection4 = basicConnectionPool.getConnection();
         connection5 = basicConnectionPool.getConnection();
         Connection connection6 = basicConnectionPool.getConnection();
-        // maximum pool size가 5
+        // maximum pool size : 5
 
         int usedConnections = basicConnectionPool.getUsedConnectionSize();
         System.out.println("현재 사용 중인 Connection 개수: " + usedConnections);
