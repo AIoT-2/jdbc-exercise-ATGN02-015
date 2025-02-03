@@ -1,4 +1,4 @@
-package com.nhnacademy.jdbc;
+package com.nhnacademy.jdbc.jndi;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,8 +14,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import static com.nhnacademy.jdbc.util.DbUtils2.getDataSource;
 
 @WebServlet
 public class JdbcConnectionServlet extends HttpServlet {
